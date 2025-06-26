@@ -1,3 +1,4 @@
+import { encapsulateStyle } from '@angular/compiler';
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({

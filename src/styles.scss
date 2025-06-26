@@ -1,9 +1,14 @@
-@import "styles/variables";
-@import "styles/components";
+@import "reset";
+@import "utilities";
+@import "fonts";
+@import "variables";
+@import "helpers";
+
 *,
 *::after,
 *::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: $font-400;
 }

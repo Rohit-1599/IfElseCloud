@@ -1,29 +1,14 @@
 @import "variables";
-svg {
-  height: 1.5rem;
-  width: 1.5rem;
-  margin: 1rem 0.5rem;
-
-  path {
-    stroke: $icon-fill;
-  }
-}
 
 .nav {
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  align-self: flex-start;
   height: 100%;
 
   .nav-actions {
-    display: flex;
-    flex-direction: column;
-    align-self: flex-start;
     margin-bottom: 5rem;
   }
   .other-actions {
-    display: flex;
-    flex-direction: column;
-    align-self: flex-start;
+    justify-content: space-evenly;
   }
 }

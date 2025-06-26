@@ -1,0 +1,66 @@
+@import "variables";
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-justify-start {
+    justify-content: flex-start;
+    justify-items: flex-start;
+  }
+  &-justify-between {
+    justify-content: space-between;
+  }
+  &-al-st {
+    align-items: flex-start;
+  }
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+
+.btn {
+  background: none;
+  border-radius: 10px;
+  padding: 0.35rem 1rem;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0.5rem;
+  font-weight: 700;
+  outline: none;
+  border: 1px solid rgb(204, 197, 197);
+}
+
+svg {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 1rem 0.5rem;
+  fill: none;
+  stroke: $icon-fill;
+}
+
+.card {
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 2rem;
+  border: 2px solid #dbd1d1;
+  box-shadow: -1px 2px 3px #b6b2b2;
+}
+
+hr {
+  height: 1px;
+  display: block;
+  border-top: 1px solid #d6d1d1;
+  margin: 1rem 0;
+  padding: 0;
+}

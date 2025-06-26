@@ -3,5 +3,5 @@ import { Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class LoaderService {
-  $loader: Subject<boolean>;
+  $loader: Subject<boolean> = new Subject<boolean>();
 }

@@ -5,6 +5,7 @@ import {
   BehaviorSubject,
   catchError,
   finalize,
+  interval,
   map,
   Observable,
   tap,
@@ -14,6 +15,10 @@ import { LoaderService } from './loader.service';
 @Injectable({ providedIn: 'root' })
 export class AppService {
   $dataSub: BehaviorSubject<GridData[]> = new BehaviorSubject([]);
+  $interval = interval(100);
+
+  // state management using Services
+  data: GridData[] = [];
 
   constructor(private http: HttpClient, private loaderserv: LoaderService) {}
 
@@ -27,11 +32,12 @@ export class AppService {
       }),
       tap((data: GridData[]) => {
         this.$dataSub.next(data);
+        this.data = data;
         return data;
       }),
       catchError((e: Error) => {
-        
         return [];
+        1;
       })
     );
   }
