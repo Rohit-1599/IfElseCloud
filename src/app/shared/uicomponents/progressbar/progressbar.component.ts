@@ -11,6 +11,7 @@ export class ProgressbarComponent implements OnChanges {
   percent: string;
 
   ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.data);
     this.percent = changes.data.currentValue + '%';
   }
 }

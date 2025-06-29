@@ -1,11 +1,13 @@
 .outer {
   width: 12rem;
-
+  height: 0.7rem;
   border-radius: 5rem;
+  background-color: #e5e5e5; /* light gray background */
+  overflow: hidden;
 }
 
 .inner {
   background-color: #6343c0;
   border-radius: 5rem;
-  height: 0.7rem;
+  height: 100%;
 }
