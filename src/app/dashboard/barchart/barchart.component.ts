@@ -1,5 +1,10 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Chart } from 'chart.js';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Chart, ChartData } from 'chart.js';
+
+type dataobj = {
+  lables: string[];
+  datasets: Object[];
+};
 
 @Component({
   selector: 'app-barchart',
@@ -10,56 +15,10 @@ export class BarchartComponent {
   @ViewChild('myCanvas', { static: true })
   chartRef!: ElementRef<HTMLCanvasElement>;
 
+  @Input('data')
+  data: any = {};
+
   ngAfterViewInit(): void {
-    const charter = new Chart(this.chartRef.nativeElement, {
-      type: 'bar',
-      data: {
-        labels: [
-          'Jan',
-          'Feb',
-          'Mar',
-          'Apr',
-          'May',
-          'Jun',
-          'Jul',
-          'Aug',
-          'Sep',
-          'Oct',
-          'Nov',
-          'Dec',
-        ],
-        datasets: [
-          {
-            label: '# of Votes',
-            data: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-            borderWidth: 0,
-            backgroundColor: [
-              'red',
-              'blue',
-              'yellow',
-              'green',
-              'purple',
-              'orange',
-            ],
-            borderRadius: 100, // Rounded corners
-          },
-        ],
-      },
-      options: {
-        scales: {
-          x: {
-            grid: {
-              display: false,
-            },
-          },
-          y: {
-            grid: {
-              display: false,
-            },
-            beginAtZero: true,
-          },
-        },
-      },
-    });
+    const charter = new Chart(this.chartRef.nativeElement, this.data);
   }
 }

@@ -1,0 +1,18 @@
+<div
+  id="badge"
+  class="flex align-items-center justify-content-space-around rouded-50"
+  [ngClass]="{
+    'badge-customer': (data=='customer'),
+    'badge-churned': data=='churned',
+    'badge': none,
+  }"
+  [ngStyle]="{
+    color: usercolor.text_color,
+    'background-color': usercolor.background_color
+  }"
+>
+  <div>
+    <div class="mr-_25 inline-block" *ngIf="show">&#11044;</div>
+    <p class="block inline-block">{{ data }}</p>
+  </div>
+</div>

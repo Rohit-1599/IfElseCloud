@@ -1,0 +1,25 @@
+%badge {
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  border: 1px solid #6343c0;
+  background-color: #6243c027;
+  color: #6343c0;
+}
+
+.badge-customer {
+  @extend %badge;
+  border: 1px solid green;
+  background-color: rgba(23, 241, 23, 0.596);
+  color: rgb(13, 119, 13);
+}
+.badge-churned {
+  @extend %badge;
+  border: 1px solid gray;
+  background-color: rgba(129, 126, 126, 0.548);
+  color: rgb(27, 26, 26);
+}
+.badge {
+  @extend %badge;
+}

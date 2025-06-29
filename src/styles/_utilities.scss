@@ -1,66 +1,147 @@
-@import "variables";
-
+/* layouts */
 .flex {
   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &-justify-start {
-    justify-content: flex-start;
-    justify-items: flex-start;
-  }
-  &-justify-between {
-    justify-content: space-between;
-  }
-  &-al-st {
-    align-items: flex-start;
-  }
 }
 
 .flex-column {
   flex-direction: column;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-grow-2 {
+  flex-grow: 2;
+}
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
-  align-items: center;
-  justify-items: center;
+  grid-template-columns: repeat(12, 1fr);
 }
 
-.btn {
-  background: none;
-  border-radius: 10px;
-  padding: 0.35rem 1rem;
-  text-align: center;
-  vertical-align: middle;
-  margin: 0.5rem;
-  font-weight: 700;
-  outline: none;
-  border: 1px solid rgb(204, 197, 197);
+/* Layout alignments */
+$align-self-values: (
+  auto,
+  start,
+  end,
+  center,
+  stretch,
+  baseline,
+  flex-end,
+  flex-start
+);
+
+@each $val in $align-self-values {
+  .align-self-#{$val} {
+    align-self: $val;
+  }
+  .justify-self-#{$val} {
+    justify-self: $val;
+  }
 }
 
-svg {
-  height: 1.5rem;
-  width: 1.5rem;
-  margin: 1rem 0.5rem;
-  fill: none;
-  stroke: $icon-fill;
+$justify-map: (
+  start: start,
+  end: end,
+  center: center,
+  stretch: stretch,
+  between: space-between,
+  around: space-around,
+  evenly: space-evenly,
+  left: left,
+  right: right,
+  normal: normal,
+);
+
+@each $key, $val in $justify-map {
+  .justify-items-#{$key} {
+    justify-items: $val;
+  }
+  .align-items-#{$key} {
+    align-items: $val;
+  }
 }
 
-.card {
-  border-radius: 1rem;
-  padding: 1rem;
-  margin: 2rem;
-  border: 2px solid #dbd1d1;
-  box-shadow: -1px 2px 3px #b6b2b2;
+// Justify Content
+@each $key, $val in $justify-map {
+  .justify-content-#{$key} {
+    justify-content: $val;
+  }
+  .align-content-#{$key} {
+    align-content: $val;
+  }
 }
 
-hr {
-  height: 1px;
+/* Displays */
+.block {
   display: block;
-  border-top: 1px solid #d6d1d1;
-  margin: 1rem 0;
-  padding: 0;
+}
+.inline {
+  display: inline;
+}
+.inline-block {
+  display: inline-block;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.none {
+  display: none;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-scroll {
+  overflow: scroll-y;
+}
+
+.center-fix {
+  transform: translate(-50%, -50%);
+}
+
+/* percent heights and widths */
+
+@for $i from 1 through 10 {
+  .w-#{$i * 10} {
+    width: $i * 10%;
+  }
+  .h-#{$i * 10} {
+    height: $i * 10%;
+  }
+}
+
+.position-sticky {
+  position: sticky;
+}
+/* viewport heights and widths */
+.w-100w {
+  width: 100w;
+}
+
+.h-100v {
+  height: 100vh;
+}
+
+/* text alignments */
+
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+/* font sizes */
+
+.debug {
+  border: 5px solid red;
 }

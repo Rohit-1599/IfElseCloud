@@ -1,0 +1,32 @@
+$colors: (
+  dark: #0e0d0d,
+  "gray-100": #f7fafc,
+  "gray-200": #edf2f7,
+  "gray-300": #e2e8f0,
+  "gray-400": #cbd5e0,
+  "gray-500": #a0aec0,
+  "gray-600": #718096,
+  "gray-700": #4a5568,
+  "gray-800": #2d3748,
+  "gray-900": #1a202c,
+  primary: #007bff,
+  secondary: #6c757d,
+  success: #06631c,
+  danger: #dc3545,
+  warning: #ffc107,
+  info: #17a2b8,
+  light: #f8f9fa,
+  accent: #9f7aea,
+);
+
+@each $name, $color in $colors {
+  .text-#{$name} {
+    color: $color;
+  }
+  .bg-#{$name} {
+    background-color: $color;
+  }
+  .stroke-#{$name} {
+    stroke: $color;
+  }
+}

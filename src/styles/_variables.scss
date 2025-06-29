@@ -1,8 +1,21 @@
 /* Colors */
-
 $primary-color: #a5a1f9;
+$secondary-color: black;
+$tertiary-color: black;
+$accent-color: black;
 $border-color: $primary-color;
 $icon-fill: #9698a4;
+
+/* color map */
+$colors: (
+  primary: $primary-color,
+  sec: $secondary-color,
+  ter: $tertiary-color,
+  accent: $accent-color,
+);
+
+$stroke-color: #f7f7f7;
+$fill-color: $stroke-color;
 
 /* fonts  */
 

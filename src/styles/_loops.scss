@@ -1,0 +1,265 @@
+@import "variables";
+
+/*  Margins and Paddings */
+
+$root_unit: 1rem;
+
+$space-scale: (
+  0: 0 * $root_unit,
+  _25: $root_unit * 0.25,
+  _50: $root_unit * 0.5,
+  1: 1 * $root_unit,
+  2: 2 * $root_unit,
+  3: 3 * $root_unit,
+  4: 4 * $root_unit,
+  5: 5 * $root_unit,
+  6: 6 * $root_unit,
+  7: 9 * $root_unit,
+  8: 10 * $root_unit,
+  9: 12 * $root_unit,
+  auto: auto,
+) !default;
+
+@each $key, $val in $space-scale {
+  .m-#{$key} {
+    margin: $val;
+  }
+  .mt-#{$key} {
+    margin-top: $val;
+  }
+  .mr-#{$key} {
+    margin-right: $val;
+  }
+  .mb-#{$key} {
+    margin-bottom: $val;
+  }
+  .ml-#{$key} {
+    margin-left: $val;
+  }
+  .mx-#{$key} {
+    margin-left: $val;
+    margin-right: $val;
+  }
+  .my-#{$key} {
+    margin-top: $val;
+    margin-bottom: $val;
+  }
+  .p-#{$key} {
+    padding: $val;
+  }
+  .pt-#{$key} {
+    padding-top: $val;
+  }
+  .pr-#{$key} {
+    padding-right: $val;
+  }
+  .pb-#{$key} {
+    padding-bottom: $val;
+  }
+  .pl-#{$key} {
+    padding-left: $val;
+  }
+  .px-#{$key} {
+    padding-left: $val;
+    padding-right: $val;
+  }
+  .py-#{$key} {
+    padding-top: $val;
+    padding-bottom: $val;
+  }
+}
+
+/* borders */
+
+$border-widths: (1, 2, 4);
+@each $w in $border-widths {
+  .border-#{$w} {
+    border-width: #{$w}px;
+    border-style: solid;
+  }
+}
+$border-colors: (
+  gray: #ccc,
+  dark: #333,
+  primary: $primary-color,
+  danger: #dc3545,
+  success: #28a745,
+);
+
+@each $name, $color in $border-colors {
+  .border-#{$name} {
+    border-color: $color;
+    border-style: solid;
+  }
+
+  .border-b-#{$name} {
+    border-color: transparent;
+    border-bottom: 1px solid $color;
+    border-style: solid;
+  }
+}
+
+.radius-1 {
+  border-radius: 1rem;
+}
+
+$radius: (
+  10: 10%,
+  20: 20%,
+  30: 30%,
+  40: 40%,
+  50: 50%,
+  60: 60%,
+  70: 70%,
+  80: 80%,
+  90: 90%,
+  100: 100%,
+);
+
+@each $key, $val in $radius {
+  .radius-#{$key} {
+    border-radius: $val;
+  }
+}
+
+/* font weights */
+.font-bold {
+  font-weight: bold;
+}
+.font-normal {
+  font-weight: normal;
+}
+.font-light {
+  font-weight: 300;
+}
+.font-medium {
+  font-weight: medium;
+}
+
+$weights: (
+  1: 100,
+  2: 200,
+  3: 300,
+  4: 400,
+  5: 500,
+  6: 600,
+  7: 700,
+  8: 800,
+) !default;
+
+@each $key, $value in $weights {
+  .fw-#{$key} {
+    font-weight: $value;
+  }
+}
+
+/* font sizes */
+
+.text-sm {
+  font-size: 0.875rem;
+}
+.text-base {
+  font-size: 1rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+}
+
+$font-sizes: (
+  xs: 0.75rem,
+  sm: 0.875rem,
+  base: 1rem,
+  lg: 1.125rem,
+  xl: 1.25rem,
+  2xl: 1.5rem,
+  3xl: 1.875rem,
+  4xl: 2.25rem,
+  5xl: 4rem,
+  6xl: 4rem,
+  7xl: 4rem,
+);
+
+@each $key, $value in $font-sizes {
+  .fs-#{$key} {
+    font-size: $value;
+  }
+}
+@each $key, $value in $font-sizes {
+  // heights rem
+  .height-#{$key} {
+    height: $value;
+  }
+
+  //widths rem
+  .width-#{$key} {
+    width: $value;
+  }
+}
+
+/* Grid row and col */
+
+@for $i from 1 through 12 {
+  @for $j from 1 through 12 {
+    .g-row-#{$i}_#{$j} {
+      grid-row: #{$i} / #{$j};
+    }
+    .g-row-#{$i}_-1 {
+      grid-row: #{$i} / -1;
+    }
+    .g-col-#{$i}_#{$j} {
+      grid-column: #{$i} / #{$j};
+    }
+
+    .g-col-#{$i}_-1 {
+      grid-column: #{$i} / -1;
+    }
+  }
+}
+
+/* Positions */
+$positions: (static, relative, absolute, fixed, sticky);
+
+@each $pos in $positions {
+  .position-#{$pos} {
+    position: $pos;
+  }
+}
+
+/* insets for positions */
+$inset-px-scale: (
+  10: 10%,
+  20: 20%,
+  30: 30%,
+  40: 40%,
+  50: 50%,
+  60: 60%,
+  70: 70%,
+  80: 80%,
+  90: 90%,
+  100: 100%,
+);
+
+@each $key, $val in $inset-px-scale {
+  .top-#{$key} {
+    top: $val;
+  }
+  .right-#{$key} {
+    right: $val;
+  }
+  .bottom-#{$key} {
+    bottom: $val;
+  }
+  .left-#{$key} {
+    left: $val;
+  }
+}
+
+/* z- indexes */
+@for $i from 1 through 12 {
+  .z-#{$i} {
+    z-index: $i;
+  }
+}

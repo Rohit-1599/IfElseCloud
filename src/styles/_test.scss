@@ -1,0 +1,47 @@
+@import "variables";
+
+.btn {
+  background: none;
+  border-radius: 0.7rem;
+  padding: 0.35rem 0.5rem;
+  text-align: center;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  font-weight: 700;
+  outline: none;
+  border: 1px solid rgb(204, 197, 197);
+  font-weight: 500;
+  font-size: 1em;
+}
+
+input {
+  display: block;
+  height: 2rem;
+  width: 2rem;
+  outline: none;
+  border: 2px solid $icon-fill;
+  border-radius: 100%;
+}
+
+svg {
+  height: 2rem;
+  width: 2rem;
+  margin: 1rem 0.5rem;
+  fill: none;
+  stroke: $icon-fill;
+}
+
+.card {
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 2px solid #fff6f6;
+  box-shadow: -0.1rem 0.25rem 0.5rem #d6d3d3;
+}
+
+hr {
+  height: 1px;
+  display: block;
+  border-top: 1px solid #d6d1d1;
+  margin: 1rem 0;
+  padding: 0;
+}

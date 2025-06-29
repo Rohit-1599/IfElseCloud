@@ -1,14 +1,16 @@
-@import "variables";
-
-.nav {
-  justify-content: space-between;
-  align-self: flex-start;
-  height: 100%;
-
-  .nav-actions {
-    margin-bottom: 5rem;
+#profile {
+  svg {
+    margin: 0;
+    transform: translate(-75%, -75%);
+    path {
+      fill: white;
+    }
   }
-  .other-actions {
-    justify-content: space-evenly;
-  }
+}
+
+svg {
+  margin: 1.5rem 0.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  stroke-width: 1.5;
 }

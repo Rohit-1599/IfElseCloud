@@ -1,8 +1,13 @@
-@import "reset";
+@import "colors";
+@import "loops";
 @import "utilities";
 @import "fonts";
 @import "variables";
-@import "helpers";
+@import "test";
+
+:root {
+  font-size: 84.5%;
+}
 
 *,
 *::after,
@@ -11,4 +16,9 @@
   margin: 0;
   box-sizing: border-box;
   font-family: $font-400;
+  letter-spacing: 1px;
+}
+
+body {
+  max-height: 1980px;
 }
