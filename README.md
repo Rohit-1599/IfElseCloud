@@ -1,4 +1,4 @@
-# If Else Cloud - UI assignemnt project
+# If Else Cloud - UI Assignment Project
 
 ## Project Status Update
 
@@ -12,4 +12,34 @@ I would greatly appreciate it if you could review my code and provide feedback o
 
 Thank you!
 
-[ Please find the output folder for the screenshots.]
+**Please find the `output` folder for the screenshots.**
+
+---
+
+## Incomplete Portions
+
+- Pagination bar and buttons are missing.
+- Progress bar, user image, and badge are implemented in the listing but not visible due to a bug.
+- Gauge chart sizing may be incorrect or misaligned due to proportion issues.
+
+---
+
+## Approach
+
+- Started with bare CSS for initial layout.
+- Developed a custom CSS utility class design system using **Sass**, leveraging control statements, interpolations, and placeholders.
+- Implemented reusable UI components such as:
+
+  - **Badges**
+  - **Progress bar**
+  - **User listing component**
+  - **Chart component**
+
+  These components are designed to be reusable and configurable.
+
+- Demonstrated project organization strategy by using a **shared module**, providing a glimpse into real-world structuring.
+- Used **services** and **RxJS** for state management and subscription handling.
+
+---
+
+Thank you!
