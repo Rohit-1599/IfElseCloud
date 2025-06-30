@@ -19,15 +19,13 @@ Thank you!
 ## Incomplete Portions
 
 - Pagination bar and buttons are missing.
-- Progress bar, user image, and badge are implemented in the listing but not visible due to a bug.
-- Gauge chart sizing may be incorrect or misaligned due to proportion issues.
 
 ---
 
 ## Approach
 
-- Started with bare CSS for initial layout.
-- Developed a custom CSS utility class design system using **Sass**, leveraging control statements, interpolations, and placeholders.
+- Started with bare SCSS for initial layout.
+- Developed a custom SCSS utility class design system using **Sass**, leveraging control statements, interpolations, and placeholders.
 - Implemented reusable UI components such as:
 
   - **Badges**
