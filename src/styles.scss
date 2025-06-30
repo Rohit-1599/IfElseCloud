@@ -5,10 +5,6 @@
 @import "variables";
 @import "test";
 
-:root {
-  font-size: 84.5%;
-}
-
 *,
 *::after,
 *::before {
@@ -20,5 +16,5 @@
 }
 
 body {
-  max-height: 1980px;
+  height: 1980px;
 }

@@ -8,6 +8,7 @@ import { UserslistComponent } from './userslist/userslist.component';
 import { HeadingComponent } from './heading/heading.component';
 import { ListComponent } from './userslist/list/list.component';
 import { SharedModule } from '../shared/shared.module';
+import { PaginationBarComponent } from './userslist/pagination-bar/pagination-bar.component';
 
 @NgModule({
   declarations: [
@@ -18,16 +19,9 @@ import { SharedModule } from '../shared/shared.module';
     UserslistComponent,
     HeadingComponent,
     ListComponent,
+    PaginationBarComponent,
   ],
   imports: [CommonModule, SharedModule],
-  exports: [
-    DashboardComponent,
-    NavComponent,
-    ColchartComponent,
-    BarchartComponent,
-    UserslistComponent,
-    HeadingComponent,
-    ListComponent,
-  ],
+  exports: [DashboardComponent],
 })
 export class DashboardModule {}

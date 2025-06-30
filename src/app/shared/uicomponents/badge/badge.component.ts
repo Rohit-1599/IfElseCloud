@@ -1,6 +1,11 @@
-import { Component, OnChanges, Input } from '@angular/core';
-import { of } from 'rxjs';
-import { badgeColorModel } from './models/badge.model';
+import {
+  Component,
+  OnChanges,
+  Input,
+  SimpleChanges,
+  ChangeDetectorRef,
+} from '@angular/core';
+import { badgeColorModel, BadgeModel } from './models/badge.model';
 
 @Component({
   selector: 'app-badge',
@@ -8,35 +13,22 @@ import { badgeColorModel } from './models/badge.model';
   styleUrl: './badge.component.scss',
 })
 export class BadgeComponent implements OnChanges {
-  @Input('data')
+  @Input()
   data: string;
-  // userdata: Observable<BadgeModel>;
+  @Input()
+  show: boolean = false;
 
-  @Input('show')
-  show: boolean;
-
-  @Input('color')
   usercolor: badgeColorModel;
 
-  none: boolean;
-
-  constructor() {
-    this.data = '';
-    this.show = false;
-    this.usercolor = null;
-  }
-
-  ngOnChanges(): void {
-    if (this.data != 'customer' && this.data != 'churned') this.none = true;
-    // this.userdata = of({
-    //   status: 'Customer',
-    //   role: 'Web Developer',
-    //   email: 'chaudharirohit@1599@gmail.com',
-    //   teams: ['UI/UX', 'Frontend', 'Web Dev'],
-    // });
-
-    console.log(this.data);
-    console.log(this.show);
-    console.log(this.usercolor);
+  constructor(private changedetect: ChangeDetectorRef) {}
+  ngOnChanges(changes: SimpleChanges): void {
+    const data = changes?.data?.currentValue;
+    if (typeof data != 'string') {
+      this.usercolor = data;
+      return;
+    } else {
+      this.data = data;
+    }
+    this.changedetect.detectChanges();
   }
 }

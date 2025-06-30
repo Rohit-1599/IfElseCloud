@@ -1,22 +1,27 @@
 <div
   id="main"
-  class="grid align-content-start h-100 p-1 justify-items-start align-items-start"
+  class="grid h-100 justify-items-center align-items-start justify-content-center"
 >
-  <div id="menu" class="h-100 w-100 g-col-1_2 g-row-1_9">
+  <div id="menu" class="h-100 w-100 g-col-1_2 g-row-1_8">
     <app-nav></app-nav>
   </div>
 
   <div
     id="wrapper"
-    class="g-col-2_-1 g-row-1_-1 h-100 grid align-items-center m-0"
+    class="g-col-2_-1 g-row-1_-1 h-100 w-100 grid align-items-center m-0"
   >
     <app-heading
       id="heading"
       class="g-row-1_2 g-col-1_-1 flex justify-content-between align-items-start p-1 justify-items-start"
     ></app-heading>
 
-    <app-colchart class="g-col-1_-1 g-row-2_6 mb-2"></app-colchart>
+    <app-colchart
+      id="colchart"
+      class="g-col-1_-1 g-row-2_5 p-1 h-100 grid"
+    ></app-colchart>
 
-    <app-userslist class="g-col-1_-1 g-row-6_-1 h-100"></app-userslist>
+    <app-userslist
+      class="g-col-1_-1 g-row-5_-1 p-1 h-100 overflow-hidden"
+    ></app-userslist>
   </div>
 </div>

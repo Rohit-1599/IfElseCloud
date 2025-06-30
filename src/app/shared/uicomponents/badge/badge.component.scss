@@ -4,21 +4,22 @@
   border-radius: 1rem;
   font-size: 1.2rem;
   border: 1px solid #6343c0;
-  background-color: #6243c027;
+  background-color: #6243c015;
+  vertical-align: middle;
   color: #6343c0;
 }
 
 .badge-customer {
   @extend %badge;
   border: 1px solid green;
-  background-color: rgba(23, 241, 23, 0.596);
-  color: rgb(13, 119, 13);
+  background-color: rgba(17, 233, 17, 0.185);
+  color: rgb(16, 145, 16);
 }
 .badge-churned {
   @extend %badge;
   border: 1px solid gray;
-  background-color: rgba(129, 126, 126, 0.548);
-  color: rgb(27, 26, 26);
+  background-color: rgba(129, 126, 126, 0.123);
+  color: rgb(37, 36, 36);
 }
 .badge {
   @extend %badge;

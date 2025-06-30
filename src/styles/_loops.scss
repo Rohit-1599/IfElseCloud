@@ -79,7 +79,7 @@ $border-widths: (1, 2, 4);
   }
 }
 $border-colors: (
-  gray: #ccc,
+  gray: #e6e0e0,
   dark: #333,
   primary: $primary-color,
   danger: #dc3545,
@@ -95,6 +95,7 @@ $border-colors: (
   .border-b-#{$name} {
     border-color: transparent;
     border-bottom: 1px solid $color;
+    border-top: 1px solid $color;
     border-style: solid;
   }
 }
@@ -169,6 +170,7 @@ $weights: (
 }
 
 $font-sizes: (
+  xxs: 0.25rem,
   xs: 0.75rem,
   sm: 0.875rem,
   base: 1rem,

@@ -9,7 +9,7 @@
   margin-right: 0.5rem;
   font-weight: 700;
   outline: none;
-  border: 1px solid rgb(204, 197, 197);
+  border: 1px solid $icon-fill;
   font-weight: 500;
   font-size: 1em;
 }
@@ -33,7 +33,7 @@ svg {
 
 .card {
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 0rem;
   border: 2px solid #fff6f6;
   box-shadow: -0.1rem 0.25rem 0.5rem #d6d3d3;
 }

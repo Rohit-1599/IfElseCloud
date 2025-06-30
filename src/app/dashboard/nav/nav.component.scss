@@ -4,13 +4,14 @@
     transform: translate(-75%, -75%);
     path {
       fill: white;
+      stroke-width: 0.5;
     }
   }
 }
 
 svg {
-  margin: 1.5rem 0.5rem;
-  height: 2.5rem;
-  width: 2.5rem;
+  margin: 1rem 0.5rem;
+  height: 1.8rem;
+  width: 1.8rem;
   stroke-width: 1.5;
 }

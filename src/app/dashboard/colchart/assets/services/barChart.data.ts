@@ -71,6 +71,7 @@ export const barchart_options = {
       stacked: true,
       grid: {
         display: false,
+        color: '#c8c8c8',
       },
     },
     y: {
@@ -83,6 +84,9 @@ export const barchart_options = {
         },
       },
       stacked: true,
+      grid: {
+        color: '#e4dfdf',
+      },
       min: 0,
       suggestedMax: 110,
       ticks: {

@@ -2,4 +2,13 @@
 
 svg {
   margin: 0;
+  padding: 0;
+}
+
+.list-grid {
+  display: grid;
+  grid-template-columns: 3rem repeat(10, 1fr) 5rem ;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: start;
 }

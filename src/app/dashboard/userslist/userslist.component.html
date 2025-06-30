@@ -1,16 +1,15 @@
-<div id="userlist" class="grid align-items-center p-0 w-100 h-100">
-  <div id="list-table" class="card p-0 g-row-1_-1 g-col-1_-1 grid h-100 w-100">
-    <!-- table head -->
+<div id="userlist" class="card grid align-items-start w-100 h-100">
+  <div id="list-table" class="g-row-1_-1 g-col-1_-1 m-1 grid h-100 w-100 px-1">
     <div
       id="list-table_head "
-      class="g-col-1_-1 g-row-1_3 flex h-100 w-100 border-1 border-b-gray align-items-start justify-content-between"
+      class="g-col-1_-1 g-row-1_2 flex h-100 w-100 align-items-start justify-content-between"
     >
       <div
         id="heading-title "
         class="flex fs-2xl flex align-items-center h-100 w-100 justify-items-start"
       >
-        <h2 class="p-2">Team members</h2>
-        <app-badge [data]="'100users'"></app-badge>
+        <h3 class="fs-3xl pr-2">Team members</h3>
+        <app-badge [data]="'100 users'"></app-badge>
       </div>
 
       <div>
@@ -33,64 +32,61 @@
         </div>
       </div>
     </div>
-    <div class="listing bg-gray g-col-1_-1 g-row-3_-1 p-_50">
-      <div class="list-head flex align-items-center justify-content-start">
-        <table class="w-100">
-          <thead>
-            <tr>
-              <td>
-                <div
-                  class="flex my-1 align-items-center h-100 w-100 justify-content-start text-center border-b-gray pb-2 mb-1"
-                >
-                  <input type="checkbox" class="mr-2" />
-                  <p class="fs-2xl mr-8 font-bold">Name</p>
-                  <p
-                    class="fs-2xl flex align-items-center justify-content-center mr-9 font-bold"
-                  >
-                    Status
-                    <span class="fs-2xl"
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="200"
-                        height="300"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M11 4h2v12l5.5-5.5l1.42 1.42L12 19.84l-7.92-7.92L5.5 10.5L11 16V4Z"
-                        /></svg
-                    ></span>
-                  </p>
-                  <p class="fs-2xl mr-9 font-bold">
-                    Role
-                    <span
-                      ><svg
-                        class="m"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="200"
-                        height="200"
-                        viewBox="0 0 1024 1024"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M512 0C229.232 0 0 229.232 0 512c0 282.784 229.232 512 512 512c282.784 0 512.017-229.216 512.017-512C1024.017 229.232 794.785 0 512 0zm0 961.008c-247.024 0-448-201.984-448-449.01c0-247.024 200.976-448 448-448s448.017 200.977 448.017 448S759.025 961.009 512 961.009zm-47.056-160.529h80.512v-81.248h-80.512zm46.112-576.944c-46.88 0-85.503 12.64-115.839 37.889c-30.336 25.263-45.088 75.855-44.336 117.775l1.184 2.336h73.44c0-25.008 8.336-60.944 25.008-73.84c16.656-12.88 36.848-19.328 60.56-19.328c27.328 0 48.336 7.424 63.073 22.271c14.72 14.848 22.063 36.08 22.063 63.664c0 23.184-5.44 42.976-16.368 59.376c-10.96 16.4-29.328 39.841-55.088 70.322c-26.576 23.967-42.992 43.231-49.232 57.807c-6.256 14.592-9.504 40.768-9.744 78.512h76.96c0-23.68 1.503-41.136 4.496-52.336c2.975-11.184 11.504-23.823 25.568-37.888c30.224-29.152 54.496-57.664 72.88-85.551c18.336-27.857 27.52-58.593 27.52-92.193c0-46.88-14.176-83.408-42.577-109.568c-28.416-26.176-68.272-39.248-119.568-39.248z"
-                        /></svg
-                    ></span>
-                  </p>
-                  <p class="fs-2xl mr-9 font-bold">Email</p>
-                  <p class="fs-2xl ml-3 font-bold">Teams</p>
-                </div>
-              </td>
-            </tr>
-          </thead>
-          <app-list></app-list>
-          <tbody>
-            <tr>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
+
+    <div class="listing g-col-1_-1 g-row-2_-1">
+      <div
+        id="list-head"
+        class="bg-gray-100 list-grid w-100 py-1 align-items-center border-b-gray text-center justify-content-flex-start fs-xl fw-6 text-gray-700"
+      >
+        <input type="checkbox" class="checkbox g-row-1_-1 g-col-1_2 radius-1" />
+        <span class="g-row-1_-1 g-col-2_4">Name</span>
+        <span
+          class="g-row-1_-1 g-col-4_5 flex align-items-center justify-content-center"
+          >Status
+          <span class="mt-_50"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="200"
+              height="200"
+              viewBox="0 0 21 21"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m6.5 13.499l4 4.001l4-4.001m-4 4.001v-13"
+              />
+            </svg>
+          </span>
+        </span>
+        <span
+          class="mr-auto g-row-1_-1 g-col-5_6 flex align-items-center justify-content-center"
+          >Role
+          <span class="mt-_50"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="200"
+              height="200"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M12 8.75c-.69 0-1.25.56-1.25 1.25v.107a.75.75 0 1 1-1.5 0V10A2.75 2.75 0 0 1 12 7.25h.116a2.634 2.634 0 0 1 1.714 4.633l-.77.66a.9.9 0 0 0-.31.674v.533a.75.75 0 0 1-1.5 0v-.533c0-.697.304-1.359.833-1.812l.771-.66a1.134 1.134 0 0 0-.738-1.995zM12 17a1 1 0 1 0 0-2a1 1 0 0 0 0 2"
+              />
+              <path
+                fill="currentColor"
+                d="M3.25 12a8.75 8.75 0 1 1 17.5 0a8.75 8.75 0 0 1-17.5 0M12 4.75a7.25 7.25 0 1 0 0 14.5a7.25 7.25 0 0 0 0-14.5"
+              /></svg
+          ></span>
+        </span>
+        <span class="g-row-1_-1 g-col-6_8 justify-self-center"
+          >Email address</span
+        >
+        <span class="g-row-1_-1 g-col-8_-1">Teams</span>
       </div>
+
+      <app-list class="w-100"></app-list>
     </div>
   </div>
 </div>

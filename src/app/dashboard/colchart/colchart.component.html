@@ -1,9 +1,13 @@
-<div class="container grid justify-items-start align-items-start h-100">
-  <div class="card card1 g-row-1_-1 w-100 g-col-1_10 g-row_1_-1 p-2">
+<div
+  id="container"
+  class="g-row-1_-1 g-col-1_-1 grid justify-items-start align-items-start"
+>
+  <div id="card1" class="card g-row-1_-1 h-100 w-100 g-col-1_10">
     <div
-      class="vendor-bkd flex justify-content-between align-items-start fs-2xl"
+      id="vendor-bkd"
+      class="grid justify-content-between h-100 w-100 align-items-start"
     >
-      <div class="heading flex">
+      <div class="heading g-col-1_12 p-1 g-row-1_2 flex w-100">
         <div class="svg-wrapper flex p-_25 bg-dark radius-100 mr-1">
           <svg
             class="height-5xl width-5xl m-0"
@@ -19,12 +23,16 @@
         </div>
 
         <div class="heading-text flex align-items-start flex-column">
-          <h3>Vendor breakdown</h3>
-          <p class="mt-_50">Keep track of vendor and their security ratings</p>
+          <h3 class="fs-2xl">Vendor breakdown</h3>
+          <p class="mt-_50 fs-md font-bold text-gray-500">
+            Keep track of vendor and their security ratings
+          </p>
         </div>
       </div>
 
-      <div class="icon justify-self-flex-end align-self-flex-start m-1">
+      <div
+        class="icon g-col-12_-1 g-row-1_2 justify-self-flex-end align-self-flex-start"
+      >
         <svg
           class="m-0"
           xmlns="http://www.w3.org/2000/svg"
@@ -41,100 +49,97 @@
           />
         </svg>
       </div>
-    </div>
 
-    <hr />
+      <div
+        id="chart-container"
+        class="g-col-1_-1 g-row-2_12 border-b-gray h-100 w-100 pt-1"
+      >
+        <app-barchart class="h-100 w-100" [data]="barchartdata"></app-barchart>
+      </div>
 
-    <div class="chart-container flex flex-column">
-      <app-barchart class="h-100" [data]="barchartdata"></app-barchart>
-
-      <hr />
-
-      <div class="flex justify-content-end fs-2xl align-items-end">
-        <button class="btn height-5xl"><p>View full report</p></button>
+      <div
+        class="flex g-col-1_-1 g-row-12_-1 justify-content-end fs-lg align-items-center p-_50"
+      >
+        <button class="btn mx-0 height-5xl"><p>View full report</p></button>
       </div>
     </div>
   </div>
 
-  <div
-    class="card card2 g-col-10_-1 g-row-1_-1 justif-self-start align-self-start h-100 p-2"
-  >
-    <div
-      class="vendor-bkd flex justify-content-between align-items-start fs-2xl"
-    >
-      <div class="heading flex">
-        <div class="heading-text flex align-items-start flex-column">
-          <h3>Vendors monitored</h3>
-          <p class="mt-_50 fs-base fw-600 text-dark">
-            You are using 80% of available spots
-          </p>
+  <div id="card2" class="card g-row-1_-1 w-100 h-100 g-col-10_-1 grid">
+    <div class="vendor-bkd g-row-1_2 g-col-1_-1 h-100 w-100 align-items-start">
+      <div class="flex justify-content-between align-items-start">
+        <div class="heading w-100">
+          <div class="heading-text flex p-1 align-items-start flex-column">
+            <h3 class="fs-2xl">Vendors monitored</h3>
+            <p class="mt-_50 fs-md font-bold text-gray-500">
+              You are using 80% of available spots
+            </p>
+          </div>
+        </div>
+
+        <div class="icon">
+          <svg
+            class="m-0"
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linejoin="round"
+              stroke-width="3"
+              d="M12 12h.01v.01H12zm0-7h.01v.01H12zm0 14h.01v.01H12z"
+            />
+          </svg>
         </div>
       </div>
-      <div class="icon justify-self-flex-end h-100 align-self-flex-start m-1">
+    </div>
+
+    <div
+      id="guage"
+      class="g-col-1_-1 g-row-2_11 border-b-gray p-_25 grid align-items-start my-_50 justify-items-start"
+    >
+      <app-barchart
+        id="gauge-chart"
+        class="g-row-1_9 g-col-1_10 h-100 w-100"
+        [data]="gaugeConf"
+      >
+      </app-barchart>
+
+      <span class="g-row-1_3 g-col-10_-1 w-100 flex">
         <svg
-          class="m-0"
+          class="stroke h-100 w-100 mx-_50"
           xmlns="http://www.w3.org/2000/svg"
           width="200"
           height="200"
-          viewBox="0 0 24 24"
+          viewBox="0 0 1024 1024"
         >
           <path
-            fill="none"
-            stroke="currentColor"
-            stroke-linejoin="round"
-            stroke-width="3"
-            d="M12 12h.01v.01H12zm0-7h.01v.01H12zm0 14h.01v.01H12z"
+            fill="currentColor"
+            d="m917 211.1l-199.2 24c-6.6.8-9.4 8.9-4.7 13.6l59.3 59.3l-226 226l-101.8-101.7c-6.3-6.3-16.4-6.2-22.6 0L100.3 754.1a8.03 8.03 0 0 0 0 11.3l45 45.2c3.1 3.1 8.2 3.1 11.3 0L433.3 534L535 635.7c6.3 6.2 16.4 6.2 22.6 0L829 364.5l59.3 59.3a8.01 8.01 0 0 0 13.6-4.7l24-199.2c.7-5.1-3.7-9.5-8.9-8.8z"
           />
         </svg>
-      </div>
-    </div>
-    <hr />
-    <div class="gauge-container">
-      <div
-        class="gauge-chart flex justify-content-between h-100 align-items-start"
-      >
-        <app-barchart id="gauge-chart" class="w-100" [data]="gaugeConf">
-        </app-barchart>
-        <div class="svg-text flex">
-          <span class="flex">
-            <svg
-              class="stroke"
-              xmlns="http://www.w3.org/2000/svg"
-              width="200"
-              height="200"
-              viewBox="0 0 14 14"
-            >
-              <g
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M9.5 3.5h4v4" />
-                <path
-                  d="M13.5 3.5L7.85 9.15a.5.5 0 0 1-.7 0l-2.3-2.3a.5.5 0 0 0-.7 0L.5 10.5"
-                />
-              </g>
-            </svg>
-            <p class="mt-1 text-success fs-2xl">10%</p>
-          </span>
-        </div>
-      </div>
-      <div class="chart-captions mt-2">
-        <h3 class="mb-_50 fs-2xl">You've almost reached the limit</h3>
-        <p class="fs-xl">
+        <p class="mt-1 text-success fs-2xl">10%</p>
+      </span>
+
+      <div class="chart-captions g-row-9_-1 g-col-1_-1 w-100 px-1 pb-0">
+        <h3 class="fs-xl">You've almost reached the limit</h3>
+        <p class="fs-base text-gray-600 mt-_50">
           You have used 80% of your available spots. Upgrade plan to monitor
           more vendors.
         </p>
       </div>
     </div>
-    <hr />
 
-    <div class="flex align-items-center justify-content-end">
-      <button class="flex p-2 align-items-center mt-0 btn">
+    <div
+      class="g-col-1_-1 g-row-11_-1 flex align-items-center justify-content-end"
+    >
+      <button class="flex fs-2xl height-5xl align-items-center my-1 mx-0 btn">
         <span
           ><svg
-            class="m-_50 height-4xl"
+            class="m-0"
             xmlns="http://www.w3.org/2000/svg"
             width="200"
             height="200"
@@ -149,7 +154,7 @@
               d="m18 13l8-11L8 13l6 6l-8 11l18-11Z"
             /></svg
         ></span>
-        <p class="fs-2xl">Upgrade plan</p>
+        <p>Upgrade plan</p>
       </button>
     </div>
   </div>
