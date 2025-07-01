@@ -1,5 +1,5 @@
 <div
-  class="flex align-items-center height-3xl text-center justify-content-center badge"
+  class="flex align-items-center height-2xl text-center justify-content-center badge"
   [ngClass]="{
     'badge-customer': data == 'customer',
     'badge-churned': data == 'churned'
@@ -10,6 +10,6 @@
   }"
 >
   <span class="fs-xs mr-_50" *ngIf="show"> &#9210; </span>
-  <p class="fs-xl" *ngIf="!usercolor">{{ data }}</p>
-  <p class="fs-xl" *ngIf="usercolor">{{ usercolor?.value }}</p>
+  <p class="fs-sm" *ngIf="!usercolor">{{ data }}</p>
+  <p class="fs-sm" *ngIf="usercolor">{{ usercolor?.value }}</p>
 </div>

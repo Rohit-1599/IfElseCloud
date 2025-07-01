@@ -1,8 +1,8 @@
 <div id="userlist" class="card grid align-items-start w-100 h-100">
-  <div id="list-table" class="g-row-1_-1 g-col-1_-1 m-1 grid h-100 w-100 px-1">
+  <div id="list-table" class="g-row-1_-1 g-col-1_-1 grid h-100 p-1 w-100">
     <div
       id="list-table_head "
-      class="g-col-1_-1 g-row-1_2 flex h-100 w-100 align-items-start justify-content-between"
+      class="g-col-1_-1 g-row-1_2 flex h-100 w-100 align-items-center justify-content-between"
     >
       <div
         id="heading-title "
@@ -33,10 +33,12 @@
       </div>
     </div>
 
-    <div class="listing g-col-1_-1 g-row-2_-1">
+    <div
+      class="listing grid align-items-start justify-content-center h-100 w-100 g-col-1_-1 g-row-2_-1"
+    >
       <div
         id="list-head"
-        class="bg-gray-100 list-grid w-100 py-1 align-items-center border-b-gray text-center justify-content-flex-start fs-xl fw-6 text-gray-700"
+        class="bg-gray-100 g-col-1_-1 g-row-1_2 list-grid w-100 py-_50 h-auto align-items-center border-b-gray text-center align-self-end justify-content-flex-start fs-lg fw-6 text-gray-700"
       >
         <input type="checkbox" class="checkbox g-row-1_-1 g-col-1_2 radius-1" />
         <span class="g-row-1_-1 g-col-2_4">Name</span>
@@ -86,7 +88,21 @@
         <span class="g-row-1_-1 g-col-8_-1">Teams</span>
       </div>
 
-      <app-list class="w-100"></app-list>
+      <div id="list" class="g-col-1_-1 h-100 w-100 g-row-2_12">
+        <app-list class="w-100"></app-list>
+        <app-list class="w-100"></app-list>
+        <app-list class="w-100"></app-list>
+        <app-list class="w-100"></app-list>
+        <app-list class="w-100"></app-list>
+        <app-list class="w-100"></app-list>
+        <app-list class="w-100"></app-list>
+        <app-list class="w-100"></app-list>
+        <app-list class="w-100"></app-list>
+        <app-list class="w-100"></app-list>
+      </div>
+      <app-pagination-bar
+        class="g-col-1_-1 g-row-12_-1 align-self-end"
+      ></app-pagination-bar>
     </div>
   </div>
 </div>
