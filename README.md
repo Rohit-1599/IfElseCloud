@@ -16,9 +16,7 @@ Thank you!
 
 ---
 
-## Incomplete Portions
-
-- Pagination bar and buttons are missing.
+## Complete
 
 ---
 
