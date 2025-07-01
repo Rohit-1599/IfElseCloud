@@ -18,8 +18,9 @@ export class DashboardService {
 
   public getUserData(): Observable<GridData[]> {
     return this.http.getData().pipe(
-      map((data: any) => {
-        this.store = data;
+      map((data: UserData) => {
+        this.store = data.grid_data;
+
         this.userserv.user$.next(this.store[1]);
         this.dashbord$.next(this.store.slice(0, 10));
         return this.store.slice(0, 10);

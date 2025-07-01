@@ -13,7 +13,7 @@ import { ErrorHandlerService } from './assets/services/errorHandler.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent {
   public isloading: boolean = true;
 
   constructor(
@@ -22,15 +22,4 @@ export class AppComponent implements OnInit, AfterViewInit {
     private chagedetector: ChangeDetectorRef,
     private errorhandler: ErrorHandlerService
   ) {}
-
-  ngOnInit(): void {}
-
-  ngAfterViewInit(): void {
-    this.loader.$loader.pipe(this.sub.takeUntilOrDestroy).subscribe({
-      next: (data: boolean) => {
-        this.isloading = data;
-        this.chagedetector.detectChanges();
-      },
-    });
-  }
 }
