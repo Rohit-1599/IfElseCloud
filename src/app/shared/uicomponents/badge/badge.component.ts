@@ -27,7 +27,7 @@ export class BadgeComponent implements OnChanges {
       this.usercolor = data;
       return;
     } else {
-      this.data = data;
+      this.data = data.toLowerCase();
     }
     this.changedetect.detectChanges();
   }

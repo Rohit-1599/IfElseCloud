@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BaseHttpService } from '../../../assets/services/baseHttp.service';
 import { GridData, UserData } from '../../../assets/models/grid.model';
-import { map, Observable, BehaviorSubject, of } from 'rxjs';
+import { map, Observable, BehaviorSubject, of, tap } from 'rxjs';
 import { UserService } from './user.service';
 
 @Injectable({ providedIn: 'root' })
@@ -18,10 +18,11 @@ export class DashboardService {
 
   public getUserData(): Observable<GridData[]> {
     return this.http.getData().pipe(
-      map((data: UserData) => {
-        this.store = data?.grid_data;
-        this.userserv.user$.next(this.store[0]);
-        return this.store?.slice(this.start, this.end);
+      map((data: any) => {
+        this.store = data;
+        this.userserv.user$.next(this.store[1]);
+        this.dashbord$.next(this.store.slice(0, 10));
+        return this.store.slice(0, 10);
       })
     );
   }

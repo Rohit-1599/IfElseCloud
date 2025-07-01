@@ -8,23 +8,28 @@
     <span
       class="flex p-_50 flex-column align-items-start justify-content-start"
     >
-      <p class="fs-xl">rohit chaudhai</p>
-      <p class="text-gray-600"><span>&#64;</span>username</p>
+      <p class="fs-xl">
+        {{ user?.name?.first_name }} {{ user?.name?.last_name }}
+      </p>
+      <p class="text-gray-600">{{ user?.name?.handle }}</p>
     </span>
   </span>
   <span class="g-row-1_2 g-col-4_5">
-    <app-badge [data]="'customer'" [show]="true"></app-badge>
+    <app-badge [data]="user?.status" [show]="true"></app-badge>
   </span>
-  <span class="g-row-1_2 g-col-5_6">Product Designer </span>
+  <span class="g-row-1_2 text-gray-700 fs-xl g-col-5_6">{{ user?.role }}</span>
   <span
     class="g-row-1_2 g-col-6_8 h-100 w-100 flex align-items-center justify-content-center"
-    ><app-progressbar [data]="76"></app-progressbar
+    ><app-progressbar [data]="user.license_used"></app-progressbar
   ></span>
   <span
     class="g-row-1_2 g-col-8_11 flex align-items-center justify-content-space-around"
-    ><app-badge class="mr-_50" data="rohit"></app-badge>
-    <app-badge data="chaudhari"></app-badge
-  ></span>
+    ><app-badge
+      class="mr-_50"
+      *ngFor="let item of user?.teams"
+      [data]="item"
+    ></app-badge>
+  </span>
   <span class="flex g-row-1_2 g-col-11_12 h-100 w-100 align-items-center"
     ><svg
       class="ml-auto"

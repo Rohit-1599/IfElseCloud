@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { LoaderService } from '../assets/services/loader.service';
 import SubscriptionHandler from '../assets/services/subscriptionHandler.service';
 import { ErrorHandlerService } from '../assets/services/errorHandler.service';
+import { DashboardService } from './assets/services/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,7 +17,8 @@ export class DashboardComponent implements OnInit {
     private loader: LoaderService,
     private subs: SubscriptionHandler,
     private changedetector: ChangeDetectorRef,
-    private errorhandler: ErrorHandlerService
+    private errorhandler: ErrorHandlerService,
+    private dashboardserv: DashboardService
   ) {}
 
   ngOnInit(): void {

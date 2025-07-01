@@ -89,7 +89,11 @@
       </div>
 
       <div id="list" class="g-col-1_-1 h-100 w-100 g-row-2_12">
-        <app-list class="w-100"></app-list>
+        <app-list
+          class="w-100"
+          *ngFor="let user of userlist"
+          [user]="user"
+        ></app-list>
       </div>
       <app-pagination-bar
         class="g-col-1_-1 g-row-12_-1 align-self-center"

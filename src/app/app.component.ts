@@ -14,7 +14,7 @@ import { ErrorHandlerService } from './assets/services/errorHandler.service';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  public isloading: boolean | Error = true;
+  public isloading: boolean = true;
 
   constructor(
     private sub: SubscriptionHandler,
@@ -30,19 +30,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       next: (data: boolean) => {
         this.isloading = data;
         this.chagedetector.detectChanges();
-        console.log(data);
       },
     });
-
-    this.errorhandler.$handler.pipe(this.sub.takeUntilOrDestroy).subscribe({
-      next: (error: Error) => {
-        this.isloading = error;
-        this.chagedetector.detectChanges();
-      },
-    });
-
-    setTimeout(() => {
-      this.loader.stop();
-    }, 3000);
   }
 }

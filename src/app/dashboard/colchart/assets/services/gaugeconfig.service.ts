@@ -1,18 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
 
-// @Injectable({ providedIn: 'root' })
-// export class GaugeconfigService implements OnInit {
-//   gauge_config = {};
-
-//   ngOnInit(): void {
-//     this.gauge_config = config;
-//   }
-
-//   public updateValue(value: number): any {
-//     return this.gauge_config;
-//   }
-// }
-
 let value = 80;
 const textcolor = 'black';
 
