@@ -3,9 +3,13 @@ import { Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ErrorHandlerService {
-  private $handler: Subject<void>;
+  public $handler: Subject<Error> = new Subject<Error>();
 
   public handleError(e: Error): void {
-    this.$handler.next();
+    this.$handler.next(e);
+  }
+
+  public dismissError(): void {
+    this.$handler.next(null);
   }
 }

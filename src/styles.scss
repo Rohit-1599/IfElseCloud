@@ -5,6 +5,10 @@
 @import "variables";
 @import "test";
 
+:root {
+  font-size: 95%;
+}
+
 *,
 *::after,
 *::before {
@@ -16,5 +20,6 @@
 }
 
 body {
-  height: 1980px;
+  height: 100vh;
+  position: relative;
 }

@@ -85,7 +85,7 @@ export const barchart_options = {
       },
       stacked: true,
       grid: {
-        color: '#e4dfdf',
+        color: '#f7f2f2',
       },
       min: 0,
       suggestedMax: 110,

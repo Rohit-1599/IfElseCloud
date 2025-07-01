@@ -1,8 +1,17 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { ChartConfigService } from './assets/services/chartConfig.service';
 import { ChartConfig } from './assets/models/chartConfig.model';
-import { gauge_config } from './assets/services/gaugeChart.data';
+
+import { UserService } from '../assets/services/user.service';
+import SubscriptionHandler from '../../assets/services/subscriptionHandler.service';
+import { gauge_config } from './assets/services/gaugeconfig.service';
 
 @Component({
   selector: 'app-colchart',
@@ -16,7 +25,13 @@ export class ColchartComponent implements OnInit {
   public gaugeConf: any;
 
   value = 80;
-  constructor(private chartconfig: ChartConfigService) {}
+  constructor(
+    private chartconfig: ChartConfigService,
+    private sub: SubscriptionHandler,
+    private userserv: UserService,
+    // private gaugeconfig: GaugeconfigService,
+    private changedetect: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     Chart.register(...registerables);

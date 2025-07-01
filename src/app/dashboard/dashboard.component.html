@@ -1,27 +1,47 @@
-<div
-  id="main"
-  class="grid h-100 justify-items-center align-items-start justify-content-center"
->
-  <div id="menu" class="h-100 w-100 g-col-1_2 g-row-1_8">
-    <app-nav></app-nav>
-  </div>
-
+<div class="position-relative h-100 w-100">
   <div
-    id="wrapper"
-    class="g-col-2_-1 g-row-1_-1 h-100 w-100 grid align-items-center m-0"
+    id="main"
+    class="grid h-100 justify-items-center align-items-start justify-content-center position-absolute z-8"
   >
-    <app-heading
-      id="heading"
-      class="g-row-1_2 g-col-1_-1 flex justify-content-between align-items-start p-1 justify-items-start"
-    ></app-heading>
+    <div id="menu" class="h-100 w-100 g-col-1_2 g-row-1_8">
+      <app-nav></app-nav>
+    </div>
 
-    <app-colchart
-      id="colchart"
-      class="g-col-1_-1 g-row-2_5 p-1 h-100 grid"
-    ></app-colchart>
+    <div
+      id="wrapper"
+      class="g-col-2_-1 g-row-1_-1 h-100 w-100 grid align-items-center m-0"
+    >
+      <app-heading
+        id="heading"
+        class="g-row-1_2 g-col-1_-1 flex justify-content-between align-items-start p-1 justify-items-start"
+      ></app-heading>
 
-    <app-userslist
-      class="g-col-1_-1 g-row-5_-1 p-1 h-100 w-100 overflow-hidden"
-    ></app-userslist>
+      <app-colchart
+        id="colchart"
+        class="g-col-1_-1 g-row-2_5 p-1 h-100 grid"
+      ></app-colchart>
+
+      <app-userslist
+        class="g-col-1_-1 g-row-5_-1 p-1 h-100 w-100 overflow-hidden"
+      ></app-userslist>
+    </div>
+  </div>
+  <div
+    id="loader"
+    class="position-fixed flex fs-xl justify-content-center align-items-center z-9 h-100 w-100"
+    *ngIf="isloading"
+  >
+    <span class="mr-2 text-light"> Loading...</span>
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+  <div
+    id="erroroverlay"
+    class="position-fixed flex fs-3xl justify-content-center align-items-center z-10 h-100 w-100"
+    *ngIf="errormsg"
+  >
+    <div class="bg-gray-200 p-4 flex align-items-center justify-content-center">
+      <span class="mr-2 text-danger"> "An error occured: "{{ errormsg }}</span>
+      <button class="btn" (click)="closeError()">Close</button>
+    </div>
   </div>
 </div>

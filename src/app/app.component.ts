@@ -1,46 +1,48 @@
-import { Component, OnInit } from '@angular/core';
-import { AppService } from './assets/services/app.service';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
 import SubscriptionHandler from './assets/services/subscriptionHandler.service';
-import { finalize, tap } from 'rxjs/operators';
 import { LoaderService } from './assets/services/loader.service';
+import { ErrorHandlerService } from './assets/services/errorHandler.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
-  public isLoading: boolean = true;
+export class AppComponent implements OnInit, AfterViewInit {
+  public isloading: boolean | Error = true;
 
   constructor(
-    private appservice: AppService,
     private sub: SubscriptionHandler,
-    private loader: LoaderService
+    private loader: LoaderService,
+    private chagedetector: ChangeDetectorRef,
+    private errorhandler: ErrorHandlerService
   ) {}
 
-  ngOnInit(): void {
-    //   this.appservice
-    //     .getData()
-    //     .pipe(
-    //       tap((e) => this.loader.$loader.next(true)),
-    //       this.sub.takeUntilOrDestroy,
-    //       finalize(() => {
-    //         this.loader.$loader.next(false);
-    //       })
-    //     )
-    //     .subscribe({
-    //       next: (e) => {
-    //         console.log(e);
-    //       },
-    //     });
-    //   this.loader.$loader.pipe(this.sub.takeUntilOrDestroy).subscribe({
-    //     next: (data: boolean) => {
-    //       this.isLoading = data;
-    //     },
-    //   });
-  }
+  ngOnInit(): void {}
 
-  clicked(): void {
-    this.loader.$loader.next(!this.isLoading);
+  ngAfterViewInit(): void {
+    this.loader.$loader.pipe(this.sub.takeUntilOrDestroy).subscribe({
+      next: (data: boolean) => {
+        this.isloading = data;
+        this.chagedetector.detectChanges();
+        console.log(data);
+      },
+    });
+
+    this.errorhandler.$handler.pipe(this.sub.takeUntilOrDestroy).subscribe({
+      next: (error: Error) => {
+        this.isloading = error;
+        this.chagedetector.detectChanges();
+      },
+    });
+
+    setTimeout(() => {
+      this.loader.stop();
+    }, 3000);
   }
 }

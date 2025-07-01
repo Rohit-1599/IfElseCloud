@@ -111,14 +111,12 @@ $justify-map: (
   .w-#{$i * 10} {
     width: $i * 10%;
   }
+
   .h-#{$i * 10} {
     height: $i * 10%;
   }
 }
 
-.position-sticky {
-  position: sticky;
-}
 /* viewport heights and widths */
 .w-100w {
   width: 100w;
@@ -126,6 +124,9 @@ $justify-map: (
 
 .h-100v {
   height: 100vh;
+}
+.w-100v {
+  width: 100vh;
 }
 
 /* text alignments */

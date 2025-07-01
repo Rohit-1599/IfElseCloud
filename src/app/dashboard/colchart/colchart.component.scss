@@ -1,5 +1,3 @@
-@import "colors";
-
 #container {
   column-gap: 1.2rem;
 }
@@ -9,4 +7,9 @@
     stroke: #349e4d;
     fill: #349e4d;
   }
+}
+
+.border-b-gray {
+  border-bottom: 2px solid #f7f2f2;
+  border-top: 2px solid #f7f2f2;
 }

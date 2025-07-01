@@ -1,5 +1,12 @@
 @import "variables";
 
 #main {
+  height: 1980px;
   grid-template-columns: repeat(20, 1fr);
+}
+
+#loader,
+#erroroverlay {
+  background-color: rgba(0, 0, 0, 0.753);
+  // transform: translate(50%, -50%);
 }
