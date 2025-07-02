@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { GridData } from '../../assets/models/grid.model';
-import SubscriptionHandler from '../../assets/services/subscriptionHandler.service';
+
 import { DashboardService } from '../assets/services/dashboard.service';
 import { LoaderService } from '../../assets/services/loader.service';
 import { take, finalize } from 'rxjs';
 import { ErrorHandlerService } from '../../assets/services/errorHandler.service';
+import { SubscriptionHandler } from '../../assets/services/subscriptionHandler.service';
 
 @Component({
   selector: 'app-userslist',
@@ -12,7 +13,7 @@ import { ErrorHandlerService } from '../../assets/services/errorHandler.service'
   styleUrl: './userslist.component.scss',
   providers: [SubscriptionHandler],
 })
-export class UserslistComponent implements OnInit {
+export class UserslistComponent implements OnInit, OnDestroy {
   userlist: GridData[] = [];
 
   constructor(
@@ -47,5 +48,9 @@ export class UserslistComponent implements OnInit {
         )
       );
     }, 7000);
+  }
+
+  ngOnDestroy(): void {
+    this.subs.ngOnDestroy();
   }
 }

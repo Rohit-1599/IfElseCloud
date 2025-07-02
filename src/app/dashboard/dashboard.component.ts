@@ -1,8 +1,9 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { LoaderService } from '../assets/services/loader.service';
-import SubscriptionHandler from '../assets/services/subscriptionHandler.service';
+
 import { ErrorHandlerService } from '../assets/services/errorHandler.service';
 import { DashboardService } from './assets/services/dashboard.service';
+import { SubscriptionHandler } from '../assets/services/subscriptionHandler.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +11,7 @@ import { DashboardService } from './assets/services/dashboard.service';
   styleUrl: './dashboard.component.scss',
   providers: [SubscriptionHandler],
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
   isloading: boolean = false;
   errormsg: string = '';
 
@@ -41,5 +42,9 @@ export class DashboardComponent implements OnInit {
   closeError(): void {
     this.errorhandler.dismissError();
     this.changedetector.detectChanges();
+  }
+
+  ngOnDestroy(): void {
+    this.subs.ngOnDestroy();
   }
 }

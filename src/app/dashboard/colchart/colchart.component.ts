@@ -4,6 +4,7 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
+  OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -12,9 +13,9 @@ import { ChartConfigService } from './assets/services/chartConfig.service';
 import { ChartConfig } from './assets/models/chartConfig.model';
 
 import { UserService } from '../assets/services/user.service';
-import SubscriptionHandler from '../../assets/services/subscriptionHandler.service';
 import { gauge_config } from './assets/services/gaugeconfig.service';
 import { GridData } from '../../assets/models/grid.model';
+import { SubscriptionHandler } from '../../assets/services/subscriptionHandler.service';
 
 @Component({
   selector: 'app-colchart',
@@ -22,7 +23,7 @@ import { GridData } from '../../assets/models/grid.model';
   styleUrl: './colchart.component.scss',
   providers: [SubscriptionHandler],
 })
-export class ColchartComponent implements OnInit, AfterViewChecked {
+export class ColchartComponent implements OnInit, AfterViewChecked, OnDestroy {
   @ViewChild('gaugeChart') chart: ElementRef;
 
   public barchartdata: ChartConfig;
@@ -50,5 +51,9 @@ export class ColchartComponent implements OnInit, AfterViewChecked {
         this.changedetect.detectChanges();
       },
     });
+  }
+
+  ngOnDestroy(): void {
+    this.sub.ngOnDestroy();
   }
 }

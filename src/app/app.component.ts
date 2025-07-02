@@ -1,12 +1,4 @@
-import {
-  AfterViewInit,
-  ChangeDetectorRef,
-  Component,
-  OnInit,
-} from '@angular/core';
-import SubscriptionHandler from './assets/services/subscriptionHandler.service';
-import { LoaderService } from './assets/services/loader.service';
-import { ErrorHandlerService } from './assets/services/errorHandler.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -16,10 +8,5 @@ import { ErrorHandlerService } from './assets/services/errorHandler.service';
 export class AppComponent {
   public isloading: boolean = true;
 
-  constructor(
-    private sub: SubscriptionHandler,
-    private loader: LoaderService,
-    private chagedetector: ChangeDetectorRef,
-    private errorhandler: ErrorHandlerService
-  ) {}
+  constructor() {}
 }
