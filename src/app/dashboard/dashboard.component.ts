@@ -8,6 +8,7 @@ import { DashboardService } from './assets/services/dashboard.service';
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
+  providers: [SubscriptionHandler],
 })
 export class DashboardComponent implements OnInit {
   isloading: boolean = false;

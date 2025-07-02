@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GridData } from '../../assets/models/grid.model';
-import { UserService } from '../assets/services/user.service';
 import SubscriptionHandler from '../../assets/services/subscriptionHandler.service';
 import { DashboardService } from '../assets/services/dashboard.service';
 import { LoaderService } from '../../assets/services/loader.service';
@@ -11,6 +10,7 @@ import { ErrorHandlerService } from '../../assets/services/errorHandler.service'
   selector: 'app-userslist',
   templateUrl: './userslist.component.html',
   styleUrl: './userslist.component.scss',
+  providers: [SubscriptionHandler],
 })
 export class UserslistComponent implements OnInit {
   userlist: GridData[] = [];

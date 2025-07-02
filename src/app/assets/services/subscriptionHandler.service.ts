@@ -1,7 +1,7 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { Observable, Subject, takeUntil } from 'rxjs';
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export default class SubscriptionHandler implements OnDestroy {
   $subs: Subject<string> = new Subject<string>();
 

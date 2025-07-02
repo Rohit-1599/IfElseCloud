@@ -20,6 +20,7 @@ import { GridData } from '../../assets/models/grid.model';
   selector: 'app-colchart',
   templateUrl: './colchart.component.html',
   styleUrl: './colchart.component.scss',
+  providers: [SubscriptionHandler],
 })
 export class ColchartComponent implements OnInit, AfterViewChecked {
   @ViewChild('gaugeChart') chart: ElementRef;
